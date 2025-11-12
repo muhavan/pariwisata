@@ -1,0 +1,79 @@
+/* ===== TABLET & MOBILE ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    gap: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .table-wrapper {
+    font-size: 0.9rem;
+  }
+
+  .umkm-table th,
+  .umkm-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-menu {
+    gap: 0;
+  }
+
+  .btn-login {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .umkm-table th,
+  .umkm-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .destinasi-card h3,
+  .berita-card h4 {
+    font-size: 1rem;
+  }
+
+  .login-box {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
