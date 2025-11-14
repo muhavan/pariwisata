@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data UMKM - UMKM & EKRAF Dinas Parawisata Tangsel</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo SI-UMKM" class="logo-img" width="60" height="60">
+                <span class="logo-text">UMKM & EKRAF</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="data-umkm.html">Data UMKM</a></li>
+                <li><a href="destinasi-wisata.html">Destinasi Wisata</a></li>
+                <li><a href="berita.html">Berita</a></li>
+                <li><a href="index.html#kontak" data-scroll="kontak">Kontak</a></li>
+                <li><a href="index.html#pengajuan" data-scroll="pengajuan" class="btn-nav-pengajuan">Ajukan UMKM</a></li>
+                <li><a href="login.html" class="btn-login">Login Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Data UMKM Lengkap</h1>
+                <p>Daftar lengkap UMKM dari Kota Tangerang Selatan</p>
+            </div>
+        </section>
+
+        <!-- Data UMKM Section -->
+        <section class="content-section">
+            <div class="container">
+                <!-- Search & Filter -->
+                <div class="filter-section">
+                    <input type="text" id="search-umkm" placeholder="Cari UMKM..." class="search-input">
+                    <select id="filter-kategori" class="filter-select">
+                        <option value="">Semua Kategori</option>
+                        <option value="Makanan">Makanan & Minuman</option>
+                        <option value="Kerajinan">Kerajinan</option>
+                        <option value="Fashion">Fashion</option>
+                        <option value="Keramik">Keramik</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Jasa">Jasa</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <!-- UMKM Table -->
+                <div class="umkm-container">
+                    <div class="table-wrapper">
+                        <table class="umkm-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama UMKM</th>
+                                    <th>Kategori Usaha</th>
+                                    <th>Alamat</th>
+                                    <th>Kontak</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="umkm-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>UMKM & EKRAF Dinas Parawisata Tangsel</h4>
+                    <p>Platform informasi UMKM dan Ekonomi Kreatif Kota Tangerang Selatan</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tautan Cepat</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="data-umkm.html">Data UMKM</a></li>
+                        <li><a href="destinasi-wisata.html">Destinasi</a></li>
+                        <li><a href="index.html#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sosial Media</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UMKM & EKRAF Dinas Parawisata Tangsel. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/data-umkm.js"></script>
+</body>
+</html>

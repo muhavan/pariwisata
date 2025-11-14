@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - UMKM & EKRAF Dinas Parawisata Tangsel</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../logo.png" alt="Logo" class="sidebar-logo">
+            <h2>SI-UMKM Admin</h2>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="#dashboard" class="menu-item active" data-tab="dashboard">
+                <span class="menu-icon">📊</span>
+                <span class="menu-text">Dashboard</span>
+            </a>
+            <a href="#data-umkm" class="menu-item" data-tab="data-umkm">
+                <span class="menu-icon">📋</span>
+                <span class="menu-text">Data UMKM</span>
+            </a>
+            <a href="#pengajuan" class="menu-item" data-tab="pengajuan">
+                <span class="menu-icon">📝</span>
+                <span class="menu-text">Pengajuan UMKM</span>
+            </a>
+            <a href="#destinasi" class="menu-item" data-tab="destinasi">
+                <span class="menu-icon">🗺️</span>
+                <span class="menu-text">Data Wisata</span>
+            </a>
+            <a href="#kelola-anggota" class="menu-item" data-tab="kelola-anggota">
+                <span class="menu-icon">👨‍👩‍👧‍👦</span>
+                <span class="menu-text">Kelola Anggota</span>
+            </a>
+            <a href="#laporan" class="menu-item" data-tab="laporan">
+                <span class="menu-icon">📈</span>
+                <span class="menu-text">Laporan & Log</span>
+            </a>
+            <!-- Add admin management tab for superusers -->
+            <a href="#admin-management" class="menu-item" data-tab="admin-management" id="admin-menu-item" style="display: none;">
+                <span class="menu-icon">👥</span>
+                <span class="menu-text">Kelola Admin</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="btn-logout" id="btn-logout">
+                <span class="menu-icon">🚪</span>
+                <span class="menu-text">Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Top Bar -->
+        <div class="topbar">
+            <h1 id="page-title">Dashboard</h1>
+            <div class="topbar-info">
+                <span id="admin-name">Admin</span>
+                <span class="topbar-time" id="current-time"></span>
+            </div>
+        </div>
+
+        <!-- Dashboard Tab -->
+        <section id="dashboard" class="tab-content active">
+            <!-- Add quick action cards for admin features -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Total UMKM</h3>
+                        <span class="stat-icon">📊</span>
+                    </div>
+                    <p class="stat-number" id="total-umkm">0</p>
+                    <p class="stat-label">Data UMKM Terverifikasi</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Pengajuan Baru</h3>
+                        <span class="stat-icon">📥</span>
+                    </div>
+                    <p class="stat-number" id="total-pengajuan">0</p>
+                    <p class="stat-label">Menunggu Verifikasi</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Disetujui</h3>
+                        <span class="stat-icon">✅</span>
+                    </div>
+                    <p class="stat-number" id="total-approved">0</p>
+                    <p class="stat-label">Pengajuan Disetujui</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <h3>Ditolak</h3>
+                        <span class="stat-icon">❌</span>
+                    </div>
+                    <p class="stat-number" id="total-rejected">0</p>
+                    <p class="stat-label">Pengajuan Ditolak</p>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h2>Aktivitas Terbaru</h2>
+                <div id="activity-list" class="activity-list">
+                    <!-- Activity items will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Data UMKM Tab -->
+        <section id="data-umkm" class="tab-content">
+            <div class="tab-header">
+                <h2>Data UMKM Terverifikasi</h2>
+                <button class="btn btn-primary" id="btn-tambah-umkm">+ Tambah UMKM Manual</button>
+            </div>
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama UMKM</th>
+                            <th>Kategori</th>
+                            <th>Alamat</th>
+                            <th>Telepon</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="umkm-table-body">
+                        <tr>
+                            <td colspan="7" style="text-align: center; color: #9ca3af;">Data UMKM kosong</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pengajuan UMKM Tab -->
+        <section id="pengajuan" class="tab-content">
+            <div class="tab-header">
+                <h2>Pengajuan UMKM Baru</h2>
+            </div>
+            <div id="pengajuan-list" class="pengajuan-grid">
+                <!-- Pengajuan cards will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Destinasi Tab -->
+        <section id="destinasi" class="tab-content">
+            <div class="tab-header">
+                <h2>Data Destinasi Wisata</h2>
+                <button class="btn btn-primary" id="btn-tambah-destinasi">+ Tambah Destinasi</button>
+            </div>
+            <div id="destinasi-list" class="destinasi-admin-grid">
+                <!-- Destinasi cards will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Kelola Anggota Tab -->
+        <section id="kelola-anggota" class="tab-content">
+            <div class="tab-header">
+                <h2>Kelola Anggota</h2>
+                <!-- Added button to add new members -->
+                <button class="btn btn-primary" id="btn-tambah-anggota">+ Tambah Anggota</button>
+            </div>
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Anggota</th>
+                            <th>Email</th>
+                            <th>Nomor Telepon</th>
+                            <th>Tanggal Daftar</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anggota-table-body">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: #9ca3af;">Data anggota kosong</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Laporan & Log Tab -->
+        <section id="laporan" class="tab-content">
+            <div class="tab-header">
+                <h2>Laporan & Log Sistem</h2>
+            </div>
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Admin</th>
+                            <th>Tipe Aksi</th>
+                            <th>Target</th>
+                            <th>Waktu</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logs-table-body">
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: #9ca3af;">Log kosong</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Admin Management Tab (superuser only) -->
+        <section id="admin-management" class="tab-content">
+            <div class="tab-header">
+                <h2>Kelola Admin</h2>
+                <button class="btn btn-primary" id="btn-tambah-admin">+ Tambah Admin Baru</button>
+            </div>
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Lengkap</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body">
+                        <tr>
+                            <td colspan="7" style="text-align: center; color: #9ca3af;">Tidak ada admin lain</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal untuk detail pengajuan -->
+    <div id="pengajuan-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="modal-close">&times;</span>
+            <h2>Detail Pengajuan UMKM</h2>
+            <div id="modal-body" class="modal-body">
+                <!-- Detail akan dimuat di sini -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM & EKRAF Dinas Parawisata Tangsel</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo SI-UMKM" class="logo-img" width="60" height="60">
+                <span class="logo-text">UMKM & EKRAF</span>
+            </div>
+            <ul class="nav-menu">
+                <!-- Updated menu to link to pages instead of sections -->
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="data-umkm.html">Data UMKM</a></li>
+                <li><a href="destinasi-wisata.html">Destinasi Wisata</a></li>
+                <li><a href="berita.html">Berita</a></li>
+                <li><a href="#kontak" data-scroll="kontak">Kontak</a></li>
+                <li><a href="#pengajuan" data-scroll="pengajuan" class="btn-nav-pengajuan">Ajukan UMKM</a></li>
+                <li><a href="login.html" class="btn-login">Login Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="beranda" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Selamat Datang di UMKM & EKRAF Dinas Parawisata Tangsel</h1>
+                <p class="hero-subtitle">Platform informasi UMKM dan Ekonomi Kreatif Kota Tangerang Selatan</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" data-scroll="pengajuan">Ajukan UMKM Anda</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='data-umkm.html'">Lihat Semua UMKM</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data UMKM Section (5 Featured UMKM) -->
+        <section id="data-umkm" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">UMKM Unggulan Tangsel</h2>
+                    <p class="section-subtitle">5 UMKM terbaik pilihan dari Kota Tangerang Selatan</p>
+                </div>
+                <div class="umkm-container">
+                    <div class="table-wrapper">
+                        <table class="umkm-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama UMKM</th>
+                                    <th>Kategori Usaha</th>
+                                    <th>Alamat</th>
+                                    <th>Kontak</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="umkm-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="umkm-note">
+                        <p><strong>Catatan:</strong> Menampilkan 5 UMKM unggulan. <a href="data-umkm.html" style="color: #0d7377; font-weight: 600; text-decoration: none;">Lihat semua UMKM</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinasi Wisata Section (3 Featured) -->
+        <section id="destinasi" class="content-section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Destinasi Wisata Unggulan Tangsel</h2>
+                    <p class="section-subtitle">3 destinasi pilihan terbaik</p>
+                </div>
+                <div class="destinasi-grid" id="destinasi-home">
+                    <!-- Destinasi will be loaded here -->
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="destinasi-wisata.html" class="btn btn-primary">Lihat Semua Destinasi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Berita Section (3 Featured) -->
+        <section id="berita" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Berita dan Kegiatan Terbaru</h2>
+                    <p class="section-subtitle">3 berita terbaru</p>
+                </div>
+                <div class="berita-grid" id="berita-home">
+                    <!-- Berita will be loaded here -->
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="berita.html" class="btn btn-primary">Lihat Semua Berita</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Pengajuan UMKM Section -->
+        <section id="pengajuan" class="content-section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Ajukan UMKM Anda</h2>
+                    <p class="section-subtitle">Daftarkan usaha Anda untuk ditampilkan di platform UMKM & EKRAF Dinas Parawisata Tangsel</p>
+                </div>
+                <div class="form-container">
+                    <form id="pengajuan-form" class="pengajuan-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nama-umkm">Nama UMKM *</label>
+                                <input type="text" id="nama-umkm" name="nama-umkm" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kategori">Kategori Usaha *</label>
+                                <select id="kategori" name="kategori" required>
+                                    <option value="">Pilih Kategori</option>
+                                    <option value="Makanan">Makanan & Minuman</option>
+                                    <option value="Kerajinan">Kerajinan</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Keramik">Keramik</option>
+                                    <option value="Elektronik">Elektronik</option>
+                                    <option value="Jasa">Jasa</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alamat-umkm">Alamat UMKM *</label>
+                            <textarea id="alamat-umkm" name="alamat-umkm" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telepon">Nomor Telepon *</label>
+                                <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foto">Upload Foto UMKM *</label>
+                            <input type="file" id="foto" name="foto" accept="image/*" required>
+                            <small>Format: JPG, PNG (Max 2MB)</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Kirim Pengajuan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak Section -->
+        <section id="kontak" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hubungi Kami</h2>
+                    <p class="section-subtitle">Punya pertanyaan? Hubungi tim kami</p>
+                </div>
+                <div class="kontak-wrapper">
+                    <div class="kontak-section">
+                        <div class="whatsapp-container">
+                            <h3>Chat via WhatsApp</h3>
+                            <p>Hubungi kami langsung untuk pertanyaan dan dukungan cepat:</p>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-whatsapp">
+                                Chat via WhatsApp
+                            </a>
+                        </div>
+                        
+                        <div class="kontak-info">
+                            <h3>Informasi Kontak</h3>
+                            <ul class="contact-list">
+                                <li><strong>Email:</strong> info@si-umkm-tangsel.id</li>
+                                <li><strong>Telepon:</strong> (021) 1234-5678</li>
+                                <li><strong>Jam Operasional:</strong> Senin - Jumat, 09:00 - 17:00</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="maps-section">
+                        <h3>Lokasi Kantor</h3>
+                        <div class="maps-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.646549247315!2d106.70994331471714!3d-6.310791995433261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5254456338b%3A0x82a52d3c9071a93a!2sPusat%20Pemerintahan%20Kota%20Tangerang%20Selatan!5e0!3m2!1sid!2sid!4v1678888888888!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>UMKM & EKRAF Dinas Parawisata Tangsel</h4>
+                    <p>Platform informasi UMKM dan Ekonomi Kreatif Kota Tangerang Selatan</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tautan Cepat</h4>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#data-umkm">Data UMKM</a></li>
+                        <li><a href="#destinasi">Destinasi</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sosial Media</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UMKM & EKRAF Dinas Parawisata Tangsel. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

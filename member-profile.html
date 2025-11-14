@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Member - UMKM & EKRAF Dinas Parawisata Tangsel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo SI-UMKM" class="logo-img" width="60" height="60">
+                <span class="logo-text">UMKM & EKRAF</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">← Kembali ke Beranda</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Edit Profil Member UMKM</h2>
+                    <p class="section-subtitle">Perbarui informasi profil dan foto UMKM Anda</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="profile-form" class="profile-form">
+                        <div id="form-error" style="display: none;" class="notification notification-error">
+                            <span class="notification-icon">⚠️</span>
+                            <div class="notification-content">
+                                <p id="error-text" class="notification-text"></p>
+                            </div>
+                        </div>
+
+                        <div id="form-success" style="display: none;" class="notification notification-success">
+                            <span class="notification-icon">✓</span>
+                            <div class="notification-content">
+                                <p id="success-text" class="notification-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="umkm-id">ID UMKM *</label>
+                            <input type="number" id="umkm-id" name="umkm_id" required placeholder="Masukkan ID UMKM Anda">
+                            <small>Cek ID UMKM Anda di halaman pengajuan atau data UMKM</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="full-name">Nama Lengkap Pemilik *</label>
+                            <input type="text" id="full-name" name="full_name" required placeholder="Nama lengkap pemilik UMKM">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profile-photo">Foto Profil</label>
+                            <div class="photo-upload-section">
+                                <div id="photo-preview" class="photo-preview"></div>
+                                <input type="file" id="profile-photo" name="profile_photo" accept="image/*">
+                                <small>Format: JPG, PNG (Max 2MB)</small>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Simpan Profil</button>
+                    </form>
+                </div>
+
+                <div class="profile-info-section">
+                    <h3>Informasi Penting</h3>
+                    <ul>
+                        <li>Profil ini berfungsi untuk mengidentifikasi pemilik UMKM</li>
+                        <li>Foto profil akan ditampilkan pada halaman detail UMKM</li>
+                        <li>Anda dapat memperbarui profil kapan saja</li>
+                        <li>Pastikan foto profil berkualitas baik dan profesional</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>UMKM & EKRAF Dinas Parawisata Tangsel</h4>
+                    <p>Platform informasi UMKM dan Ekonomi Kreatif Kota Tangerang Selatan</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tautan Cepat</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#data-umkm">Data UMKM</a></li>
+                        <li><a href="index.html#destinasi">Destinasi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UMKM & EKRAF Dinas Parawisata Tangsel. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/member-profile.js"></script>
+</body>
+</html>
